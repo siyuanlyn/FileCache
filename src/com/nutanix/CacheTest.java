@@ -235,18 +235,18 @@ public class CacheTest {
 	/*
 	 * Check the concurrent correctness of functionalities
 	 *   t1 -----------------------t2
-	 *   |						    |
-	 *   | <-pin test 1~5	        |
+	 *   |                          |
+	 *   | <-pin test 1~5           |
 	 *   | <-----------------------t2.start()
-	 *   | |					    |
-	 *   | sleep 2 sec				| should be block
-	 *   | |						| because no available
-	 *   | ---						| slots to acquire
-	 *   | upin test 3				|
+	 *   | |                        |
+	 *   | sleep 2 sec              | should be block
+	 *   | |                        | because no available
+	 *   | ---                      | slots to acquire
+	 *   | upin test 3              |
 	 *   | <-----------------------pin test 6
-	 *   | upin test 4				|
+	 *   | upin test 4              |
 	 *   | <-----------------------pin test 7
-	 *   | upin test 5
+	 *   | upin test 5              |
 	 */
 	@Test
 	public void concurrentTest() throws InterruptedException, IOException {
